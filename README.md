@@ -1,13 +1,9 @@
-TYPO3 Homestead
-===============
+TYPO3 Review
+============
 
-*Update 26 august 2015:* Homestead now uses a pre-built box. It no longer requires ansible. All previous ansible functionality may be moved to inside the machine or replaced by bash scripts. If you would like to help out . . . patches are welcome ;-).
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Tuurlijk&url=https://github.com/Tuurlijk/TYPO3.Review&title=TYPO3.Review&language=Ansible&tags=github&category=software)
 
-When I have a bit more time, I'll cook up some nice configuration that does away with the host system ansible requirement. It will be a light-weight version of the ansible setup found in this repository. It will run on the guest system with some clever trickery. Then we can use that to tweak config files, set up different php versions and TYPO3 versions. ETA: 2-3 months.
-
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Tuurlijk&url=https://github.com/Tuurlijk/TYPO3.Homestead&title=TYPO3.Homestead&language=Ansible&tags=github&category=software)
-
-TYPO3 Homestead is your one-stop [TYPO3](http://typo3.org) and [Neos](http://neos.io) development environment. Just run `vagrant up` and a full Linux Ubuntu distribution will be downloaded with all the packages and configuration needed to start development right away.
+TYPO3 Review is your one-stop [TYPO3](http://typo3.org) and [Neos](http://neos.io) review environment. Just run `vagrant up` and a full Linux Ubuntu distribution will be downloaded with all the packages and configuration needed to review patches right away.
 
 This environment is inteded as as a local environment. Security-wise it is in no way fit for production.
 
@@ -49,10 +45,10 @@ Installation
 
 Installation is pretty straight forward. You're just a few steps away from 'great success'.
 
-1). Clone TYPO3.Homestead and cd into it:
+1). Clone TYPO3.Review and cd into it:
 ```bash
-git clone https://github.com/Tuurlijk/TYPO3.Homestead.git
-cd TYPO3.Homestead
+git clone https://github.com/Tuurlijk/TYPO3.Review.git
+cd TYPO3.Review
 ```
 
 2). Copy any configuration files you wish to change from `Defaults/` to `Configuration/`. Optionally setup a shared directory to hold your TYPO3 sources and sites in the `Configuration/vagrant.yml` file:
@@ -60,7 +56,7 @@ cd TYPO3.Homestead
 ```yaml
 synced_folders:
   - name: Development
-    src: ~/Projects/TYPO3/Development
+    src: ~/Projects/TYPO3/Review
     target: /var/www
 ```
 
@@ -73,7 +69,8 @@ vagrant up
 When the machine has booted, you can visit [http://local.typo3.org](http://local.typo3.org). And also any of the pre-configured sites or any site you configured. The default sites are:
 
 * [6.2.local.typo3.org/typo3/](http://6.2.local.typo3.org/typo3/)
-* [7.4.local.typo3.org/typo3/](http://7.4.local.typo3.org/typo3/)
+* [7.5.local.typo3.org/typo3/](http://7.5.local.typo3.org/typo3/)
+* [review.local.typo3.org/typo3/](http://review.local.typo3.org/typo3/)
 * [dev-master.local.typo3.org/typo3/](http://dev-master.local.typo3.org/typo3/)
 * [1.2.local.neos.io/neos/](http://1.2.local.neos.io/neos/)
 * [2.0.local.neos.io/neos/](http://2.0.local.neos.io/neos/)
@@ -123,8 +120,9 @@ This box needs internet connectivity to resolve the local.neos.io domain name to
 * 192.168.144.120 2.0.local.neos.io
 * 192.168.144.120 dev-master.local.neos.io
 * 192.168.144.120 6.2.local.typo3.org
-* 192.168.144.120 7.4.local.typo3.org
+* 192.168.144.120 7.5.local.typo3.org
 * 192.168.144.120 dev-master.local.typo3.org
+* 192.168.144.120 review.local.typo3.org
 
 Contributing
 ------------

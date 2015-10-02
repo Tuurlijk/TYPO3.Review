@@ -8,8 +8,9 @@ typo3:
       6.2.local.typo3.org: '6.2.*'
       6.2.15.local.typo3.org: '6.2.15'
       7.4.local.typo3.org: '7.4.*'
-      7.5.0.local.typo3.org: '7.5.0'
+      7.5.local.typo3.org: '7.5.*'
       dev-master.local.typo3.org: '*'
+      review.local.typo3.org: '*'
     extensions:
       enabled:
         - scheduler

@@ -79,9 +79,9 @@ echo "You can now try one of these sites:"
 echo "- http://1.2.10.local.neos.io/neos/"
 echo "- http://2.0.0.local.neos.io/neos/"
 echo "- http://dev-master.local.neos.io/neos/"
-echo "- http://6.2.15.local.typo3.org/typo3/"
-echo "- http://7.5.0.local.typo3.org/typo3/"
+echo "- http://7.5.local.typo3.org/typo3/"
 echo "- http://dev-master.local.typo3.org/typo3/"
+echo "- http://review.local.typo3.org/typo3/"
 echo "- http://local.typo3.org:1080/ <- mailcatcher"
 echo ""
 echo "Username: admin"
@@ -93,7 +93,7 @@ SCRIPT
 VAGRANTFILE_API_VERSION = 2
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-	config.vm.box = 'Michiel/Development'
+	config.vm.box = 'Michiel/Review'
 	config.vm.boot_timeout = 180
 # If you have no Internet access (can not resolve *.local.typo3.org), you can use host aliases:
 # 	config.hostsupdater.aliases = [
@@ -135,7 +135,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 	# Vmware Fusion
 	config.vm.provider :vmware_fusion do |v, override|
-		override.vm.box = "Michiel/Development"
+		override.vm.box = "Michiel/Review"
 		v.vmx["memsize"] = MEMORY.to_i
 		v.vmx["numvcpus"] = CORES.to_i
 	end
