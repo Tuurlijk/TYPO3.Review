@@ -68,7 +68,6 @@ vagrant up
 ```
 When the machine has booted, you can visit [http://local.typo3.org](http://local.typo3.org). And also any of the pre-configured sites or any site you configured. The default sites are:
 
-* [6.2.local.typo3.org/typo3/](http://6.2.local.typo3.org/typo3/)
 * [7.5.local.typo3.org/typo3/](http://7.5.local.typo3.org/typo3/)
 * [review.local.typo3.org/typo3/](http://review.local.typo3.org/typo3/)
 * [dev-master.local.typo3.org/typo3/](http://dev-master.local.typo3.org/typo3/)
@@ -119,7 +118,6 @@ This box needs internet connectivity to resolve the local.neos.io domain name to
 * 192.168.144.120 1.2.local.neos.io
 * 192.168.144.120 2.0.local.neos.io
 * 192.168.144.120 dev-master.local.neos.io
-* 192.168.144.120 6.2.local.typo3.org
 * 192.168.144.120 7.5.local.typo3.org
 * 192.168.144.120 dev-master.local.typo3.org
 * 192.168.144.120 review.local.typo3.org
