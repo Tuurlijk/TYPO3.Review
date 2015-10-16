@@ -19,7 +19,7 @@ First is the last released version (7.5 in time of writing this), second is the 
 
 All sites have an installed introduction package for having a running web site out of the box. Also there are the Styleguide and IconAPI extensions installed.
 
-Now open your browser and go to local.typo3.org
+Now open your browser and go to [local.typo3.org](http://local.typo3.org)
 ![](Images/start_page.png)
 You can see a list of links to the backends of the installed sites and some buttons for resetting, updating and reviewing.
 
