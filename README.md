@@ -5,7 +5,7 @@ TYPO3 Review
 
 TYPO3 Review is your one-stop [TYPO3](http://typo3.org)  review environment. Just run `vagrant up` and a full Linux Ubuntu distribution will be downloaded with all the packages and configuration needed to review patches right away.
 
-This environment is inteded as as a local environment. Security-wise it is in no way fit for production.
+This environment is intended as as a local environment. Security-wise it is in no way fit for production.
 
 Effortlessly test one site against multiple PHP versions and hhvm.
 
@@ -17,13 +17,13 @@ You do not have to set up anything else than this review box to get started revi
 This review box includes 3 TYPO3 web sites.
 First is the last released version (7.5 in time of writing this), second is the development version of the master for reference and the third is the master for doing the reviews.
 
-All sites have an installed introduction package for having a running web site out of the box. Also there are the Styleguide and IconAPI extensions installed.
+All sites have an installed introduction package to have a running website out of the box. Also the Styleguide and IconAPI extensions are installed.
 
 Now open your browser and go to [local.typo3.org](http://local.typo3.org)
 ![](Images/start_page.png)
 You can see a list of links to the backends of the installed sites and some buttons for resetting, updating and reviewing.
 
-Before you start, the first action is to update the sites. Pressing the „Update“ button gets the latest commits from the repository and flushes the cache to get a clean system to work with. You should update the sites on a regular base, best is every time before starting to review something. Always both sites, the dev-master and review are updated to have them identical.
+Before you start, the first action is to update the sites. Pressing the „Update“ button gets the latest commits from the repository and flushes the cache to get a clean system to work with. You should update the sites on a regular base, best is every time before starting to review something. Always both sites, the dev-master and review are updated to have them in identical state.
 ![](Images/update_1.png)
 skip some lines here
 
@@ -32,13 +32,13 @@ skip some lines here
 
 ![](Images/update_3.png)
 
-Than you have to search at review.typo3.org or even better at forger.typo3.org for a review that you want to test. On the web page of the selected review item there is a drop down on the upper right corner called „download“. Drop the list down, click on the line beginning with „Cherry pick“ and copy the line to the clipboard.
+Now you have to search at https://review.typo3.org or even better at https://forger.typo3.org for a review you want to test. On the web page of the selected review item there is a dropdown on the upper right corner called „download“. Drop the list down, click on the line beginning with „Cherry pick“ and copy the line to the clipboard.
 ![](Images/get_cherry_pick.png)
 Then go to the web site local.typo3.org. Put the clipboard content into the input field „Cherry pick“ and press the „Do a review“ button.
 ![](Images/paste_cherry_pick.png)
 The patch is then applied to review.local.typo3.org. 
 ![](Images/review.png)
-Now you can view the „old“ version without the patch at [dev-master.local.typo3.org](http://dev-master.local.typo3.org) and the „new“ version with the patch at [review.local.typo3.org](http://review.local.typo3.org). It is easy to switch between the 2 browser tabs (or windows) to see what has been changed with the patch.
+Now you can view the „old“ version without the patch at [dev-master.local.typo3.org](http://dev-master.local.typo3.org) and the „new“ version with the patch at [review.local.typo3.org](http://review.local.typo3.org). It is easy to switch between the two browser tabs (or windows) to see what has been changed with the patch.
 
 Features
 --------
@@ -97,7 +97,7 @@ If you don't do this, you may want to add your public ssh key to the authorized_
 ```bash
 vagrant up
 ```
-When the machine has booted, you can visit [http://local.typo3.org](http://local.typo3.org). And also any of the pre-configured sites or any site you configured. The default sites are:
+When the machine has booted, you can visit [http://local.typo3.org](http://local.typo3.org) and also any of the pre-configured sites or any site you configured. The default sites are:
 
 * [7.5.local.typo3.org/typo3/](http://7.5.local.typo3.org/typo3/)
 * [review.local.typo3.org/typo3/](http://review.local.typo3.org/typo3/)
