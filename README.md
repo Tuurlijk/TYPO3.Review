@@ -1,5 +1,4 @@
-TYPO3 Review
-============
+# TYPO3 Review
 
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Tuurlijk&url=https://github.com/Tuurlijk/TYPO3.Review&title=TYPO3.Review&language=Ansible&tags=github&category=software)
 
@@ -9,8 +8,8 @@ This environment is intended as as a local environment. Security-wise it is in n
 
 Effortlessly test one site against multiple PHP versions and hhvm.
 
-Reviews
--------
+## Reviews
+
 The TYPO3 Review box makes reviewing patches for TYPO3 as easy as possible.
 You do not have to set up anything else than this review box to get started reviewing for the TYPO3 development.
 
@@ -19,7 +18,13 @@ First is the last released version (7.5 in time of writing this), second is the 
 
 All sites have an installed introduction package to have a running website out of the box. Also the Styleguide and IconAPI extensions are installed.
 
-Now open your browser and go to [local.typo3.org](http://local.typo3.org)
+### Using the Chrome Helper
+
+If you don't want to manually copy and paste the cherry-pick commands you can use the [TYPO3 Review Chrome extension](https://chrome.google.com/webstore/developer/edit/omloegomfdeniikpijekbmggdgmkmkck). You're just a couple of clicks away from reviewing your first change.
+
+### Using Old-School Manual Labour
+
+Open your browser and go to [local.typo3.org](http://local.typo3.org)
 ![](Images/start_page.png)
 You can see a list of links to the backends of the installed sites and some buttons for resetting, updating and reviewing.
 
@@ -40,8 +45,7 @@ The patch is then applied to review.local.typo3.org.
 ![](Images/review.png)
 Now you can view the „old“ version without the patch at [dev-master.local.typo3.org](http://dev-master.local.typo3.org) and the „new“ version with the patch at [review.local.typo3.org](http://review.local.typo3.org). It is easy to switch between the two browser tabs (or windows) to see what has been changed with the patch.
 
-Features
---------
+## Features
 
 TYPO3 Review is based on TYPO3 Homestead which comes with the following stack:
 
@@ -65,14 +69,12 @@ TYPO3 Review is based on TYPO3 Homestead which comes with the following stack:
 
 The flexible configuration allows you to create any combination of TYPO3 source and PHP backend with or without SSL.
 
-Requirements
-------------
+## Requirements
 
 * [Virtualbox](https://www.virtualbox.org/) or another virtualization product - Free!
 * [Vagrant](http://www.vagrantup.com/) - Version 1.5.* is needed - Free!
 
-Installation
-------------
+## Installation
 
 Installation is pretty straight forward. You're just a few steps away from 'great success'.
 
@@ -117,8 +119,7 @@ The amount of CPUs available on the host machine will also be available on the g
 
 The CNAME *.local.typo3.org resolves to the IP 192.168.144.120. This means you will have magic auto-resolving hostnames. So if you change the IP, you will need to take care of your hostname resolving yourself, either by hardcoding all the hostnames you wish to use or by some other means.
 
-SSH Access
-----------
+## SSH Access
 
 If you set up a box without a file share, you will want to access the box using ssh. To add your public ssh key to the authorized_keys file of the vagrant user, you can execute the following command:
 
@@ -128,22 +129,19 @@ If you set up a box without a file share, you will want to access the box using 
 
 Now you will be able to get into the box as user vagrant without supplying a password.
 
-Multiple PHP versions
----------------------
+## Multiple PHP versions
 
 If you prefix your site name with `hhvm`,  `php5_5_28` or `php5_6_12`, your request will be served by that backend:
 
 You can see what backend is used by inspecting the `X-Powered-By` response header.
 
-MailCatcher
------------
+## MailCatcher
 
 [MailCatcher](http://mailcatcher.me/) runs a super simple SMTP server which catches any message sent to it to display in a web interface. This makes it easy to test forms without actually sending mail to the 'real' mail address. Set your favourite app to deliver to smtp://127.0.0.1:1025 instead of your default SMTP server, then check out [http://local.typo3.org:1080](http://local.typo3.org:1080) to see the mail that arrived so far.
 
 MailCatcher has been set up for TYPO3 CMS. For Neos, you may be interested in the [https://github.com/langeland/Langeland.SwiftBox](Langeland.SwiftBox) package. It is a package that can override the swiftmailer setting to send to that instead and you can browse all the emails with the included flow application.
 
-Can't connect after the vagrant up?
------------------------------------
+## Can't connect after the vagrant up?
 
 This box needs internet connectivity to resolve the local.neos.io domain name to the IP of the box. If you are not connected to the Internet you will need to add the following entries to your hosts file:
 
@@ -155,8 +153,7 @@ This box needs internet connectivity to resolve the local.neos.io domain name to
 * 192.168.144.120 dev-master.local.typo3.org
 * 192.168.144.120 review.local.typo3.org
 
-Contributing
-------------
+## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests and examples for any new or changed functionality.
 
@@ -166,27 +163,23 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-TODO
-----
+## TODO
 
 * Nginx configuration snippets?
   https://github.com/h5bp/server-configs-nginx/blob/master/h5bp/
 * Enable configuration through yml file like http://laravel.com/docs/5.0/homestead
 * Add available backends as examples to index sites (http://local.neos.io and http://local.typo3.org)
 
-Known Problems
---------------
+## Known Problems
 
 * The sources that are fetched from github may be hard to reach when github is under a DDOS
 * If you get the error `The box 'ubuntu/trusty64' could not be found`, then you may have a vagrant version lower than 1.5. The stock Ubuntu vagrant version is 1.4 at the time of writing. You can get the latest vagrant version from [the vagrant site](https://www.vagrantup.com/downloads). Some details can be found on [vaprobash issue #322](https://github.com/fideloper/Vaprobash/issues/322).
 
-License
--------
+## License
 
 [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html)
 
-References
-----------
+## References
 
 - [konomae/ansible-laravel-settler](https://github.com/konomae/ansible-laravel-settler)
 - [laravel/homestead](https://github.com/laravel/homestead)
