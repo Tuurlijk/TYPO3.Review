@@ -24,6 +24,8 @@ If you don't want to manually copy and paste the cherry-pick commands you can us
 
 Now you can view the „old“ version without the patch at [dev-master.local.typo3.org](http://dev-master.local.typo3.org) and the „new“ version with the patch at [review.local.typo3.org](http://review.local.typo3.org). It is easy to switch between the two browser tabs (or windows) to see what has been changed with the patch.
 
+![](Images/chrome_gerrit.png)
+
 ### Using Old-School Manual Labour
 
 Open your browser and go to [local.typo3.org](http://local.typo3.org)
