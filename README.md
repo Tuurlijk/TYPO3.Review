@@ -168,6 +168,13 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+## Known Problems
+
+* The sources that are fetched from github may be hard to reach when github is under a DDOS
+* If you get the error `The box 'ubuntu/trusty64' could not be found`, then you may have a vagrant version lower than 1.5. The stock Ubuntu vagrant version is 1.4 at the time of writing. You can get the latest vagrant version from [the vagrant site](https://www.vagrantup.com/downloads). Some details can be found on [vaprobash issue #322](https://github.com/fideloper/Vaprobash/issues/322).
+* On Windows machines you may need to enable VT-X in the bios of your machine. vt-x is disabled in the BIOS, you can disable this in the image settings under system tab processor, PAE/NX disable or you can enable this setting in your BIOS. Check: [http://www.sysprobs.com/disable-enable-virtualization-technology-bios](http://www.sysprobs.com/disable-enable-virtualization-technology-bios) and check your windows version ( minimal a Pro-edition) or [Enable without BIOS](http://stackoverflow.com/questions/31581854/enabling-intel-virtualization-vt-x-without-option-in-bios).
+* Vagrant may complain about a 'space' character in your path. Ruby can't handle this. You will need to move the Vagrant box to a path without spaces and try again.
+
 ## TODO
 
 * Nginx configuration snippets?
@@ -175,12 +182,12 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * Enable configuration through yml file like http://laravel.com/docs/5.0/homestead
 * Add available backends as examples to index sites (http://local.neos.io and http://local.typo3.org)
 
-## Known Problems
+## Random ideas
 
-* The sources that are fetched from github may be hard to reach when github is under a DDOS
-* If you get the error `The box 'ubuntu/trusty64' could not be found`, then you may have a vagrant version lower than 1.5. The stock Ubuntu vagrant version is 1.4 at the time of writing. You can get the latest vagrant version from [the vagrant site](https://www.vagrantup.com/downloads). Some details can be found on [vaprobash issue #322](https://github.com/fideloper/Vaprobash/issues/322).
-* On Windows machines you may need to enable VT-X in the bios of your machine. vt-x is disabled in the BIOS, you can disable this in the image settings under system tab processor, PAE/NX disable or you can enable this setting in your BIOS. Check: [http://www.sysprobs.com/disable-enable-virtualization-technology-bios](http://www.sysprobs.com/disable-enable-virtualization-technology-bios) and check your windows version ( minimal a Pro-edition) or [Enable without BIOS](http://stackoverflow.com/questions/31581854/enabling-intel-virtualization-vt-x-without-option-in-bios).
-* Vagrant may complain about a 'space' character in your path. Ruby can't handle this. You will need to move the Vagrant box to a path without spaces and try again.
+* Extend the Chrome extension to show a page action on all *.local.typo3.org sites to do a number of things to the site like:
+   - phpunit
+   - reset / clean any git repository
+   - etc.
 
 ## License
 
