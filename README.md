@@ -8,47 +8,6 @@ This environment is intended as as a local environment. Security-wise it is in n
 
 Effortlessly test one site against multiple PHP versions and hhvm.
 
-## Reviews
-
-The TYPO3 Review box makes reviewing patches for TYPO3 as easy as possible.
-You do not have to set up anything else than this review box to get started reviewing for the TYPO3 development.
-
-This review box includes 3 TYPO3 web sites.
-First is the last released version (7.5 in time of writing this), second is the development version of the master for reference and the third is the master for doing the reviews.
-
-All sites have an installed introduction package to have a running website out of the box. Also the Styleguide and IconAPI extensions are installed.
-
-### Using the Chrome Helper
-
-If you don't want to manually copy and paste the cherry-pick commands you can use the [TYPO3 Review Chrome extension](https://chrome.google.com/webstore/detail/typo3-review/omloegomfdeniikpijekbmggdgmkmkck). You're just a couple of clicks away from reviewing your first change.
-
-Now you can view the „old“ version without the patch at [dev-master.local.typo3.org](http://dev-master.local.typo3.org) and the „new“ version with the patch at [review.local.typo3.org](http://review.local.typo3.org). It is easy to switch between the two browser tabs (or windows) to see what has been changed with the patch.
-
-![](Images/chrome_gerrit.png)
-
-### Using Old-School Manual Labour
-
-Open your browser and go to [local.typo3.org](http://local.typo3.org)
-![](Images/start_page.png)
-You can see a list of links to the backends of the installed sites and some buttons for resetting, updating and reviewing.
-
-Before you start, the first action is to update the sites. Pressing the „Update“ button gets the latest commits from the repository and flushes the cache to get a clean system to work with. You should update the sites on a regular base, best is every time before starting to review something. Always both sites, the dev-master and review are updated to have them in identical state.
-![](Images/update_1.png)
-skip some lines here
-
-![](Images/update_2.png)
-skip some lines here
-
-![](Images/update_3.png)
-
-Now you have to search at [Gerrit](https://review.typo3.org) or even better at [Forger](https://forger.typo3.org) for a review you want to test. On the web page of the selected review item there is a dropdown on the upper right corner called „download“. Drop the list down, click on the line beginning with „Cherry pick“ and copy the line to the clipboard.
-![](Images/get_cherry_pick.png)
-Then go to the web site local.typo3.org. Put the clipboard content into the input field „Cherry pick“ and press the „Do a review“ button.
-![](Images/paste_cherry_pick.png)
-The patch is then applied to review.local.typo3.org. 
-![](Images/review.png)
-Now you can view the „old“ version without the patch at [dev-master.local.typo3.org](http://dev-master.local.typo3.org) and the „new“ version with the patch at [review.local.typo3.org](http://review.local.typo3.org). It is easy to switch between the two browser tabs (or windows) to see what has been changed with the patch.
-
 ## Features
 
 TYPO3 Review is based on TYPO3 Homestead which comes with the following stack:
@@ -134,12 +93,52 @@ If you use shared folders, the contents of the shared `src` folder will replace 
 
 If you don't do this, you may want to add your public ssh key to the authorized_keys file of the vagrant user. Read the section SSH Access below.
 
-
 ## Multiple PHP versions
 
 If you prefix your site name with `hhvm`,  `php5_5_28` or `php5_6_12`, your request will be served by that backend:
 
 You can see what backend is used by inspecting the `X-Powered-By` response header.
+
+## Reviews
+
+The TYPO3 Review box makes reviewing patches for TYPO3 as easy as possible.
+You do not have to set up anything else than this review box to get started reviewing for the TYPO3 development.
+
+This review box includes 3 TYPO3 web sites.
+First is the last released version (7.5 in time of writing this), second is the development version of the master for reference and the third is the master for doing the reviews.
+
+All sites have an installed introduction package to have a running website out of the box. Also the Styleguide and IconAPI extensions are installed.
+
+### Using the Chrome Helper
+
+If you don't want to manually copy and paste the cherry-pick commands you can use the [TYPO3 Review Chrome extension](https://chrome.google.com/webstore/detail/typo3-review/omloegomfdeniikpijekbmggdgmkmkck). You're just a couple of clicks away from reviewing your first change.
+
+Now you can view the „old“ version without the patch at [dev-master.local.typo3.org](http://dev-master.local.typo3.org) and the „new“ version with the patch at [review.local.typo3.org](http://review.local.typo3.org). It is easy to switch between the two browser tabs (or windows) to see what has been changed with the patch.
+
+![](Images/chrome_gerrit.png)
+
+### Using Old-School Manual Labour
+
+Open your browser and go to [local.typo3.org](http://local.typo3.org)
+![](Images/start_page.png)
+You can see a list of links to the backends of the installed sites and some buttons for resetting, updating and reviewing.
+
+Before you start, the first action is to update the sites. Pressing the „Update“ button gets the latest commits from the repository and flushes the cache to get a clean system to work with. You should update the sites on a regular base, best is every time before starting to review something. Always both sites, the dev-master and review are updated to have them in identical state.
+![](Images/update_1.png)
+skip some lines here
+
+![](Images/update_2.png)
+skip some lines here
+
+![](Images/update_3.png)
+
+Now you have to search at [Gerrit](https://review.typo3.org) or even better at [Forger](https://forger.typo3.org) for a review you want to test. On the web page of the selected review item there is a dropdown on the upper right corner called „download“. Drop the list down, click on the line beginning with „Cherry pick“ and copy the line to the clipboard.
+![](Images/get_cherry_pick.png)
+Then go to the web site local.typo3.org. Put the clipboard content into the input field „Cherry pick“ and press the „Do a review“ button.
+![](Images/paste_cherry_pick.png)
+The patch is then applied to review.local.typo3.org. 
+![](Images/review.png)
+Now you can view the „old“ version without the patch at [dev-master.local.typo3.org](http://dev-master.local.typo3.org) and the „new“ version with the patch at [review.local.typo3.org](http://review.local.typo3.org). It is easy to switch between the two browser tabs (or windows) to see what has been changed with the patch.
 
 ## MailCatcher
 
