@@ -82,25 +82,10 @@ The flexible configuration allows you to create any combination of TYPO3 source 
 
 Installation is pretty straight forward. You're just a few steps away from 'great success'.
 
-1). Clone TYPO3.Review and cd into it:
+Clone TYPO3.Review, cd into the new directory and start the machine:
 ```bash
 git clone https://github.com/Tuurlijk/TYPO3.Review.git
 cd TYPO3.Review
-```
-
-2). Copy any configuration files you wish to change from `Defaults/` to `Configuration/`. Optionally setup a shared directory to hold your TYPO3 sources and sites in the `Configuration/vagrant.yml` file:
-
-```yaml
-synced_folders:
-  - name: Development
-    src: ~/Projects/TYPO3/Review
-    target: /var/www
-```
-
-If you don't do this, you may want to add your public ssh key to the authorized_keys file of the vagrant user. Read the section SSH Access below.
-
-3). Then boot the machine:
-```bash
 vagrant up
 ```
 When the machine has booted, you can visit [http://local.typo3.org](http://local.typo3.org) and also any of the pre-configured sites or any site you configured. The default sites are:
@@ -132,6 +117,23 @@ If you set up a box without a file share, you will want to access the box using 
 ```
 
 Now you will be able to get into the box as user vagrant without supplying a password.
+
+## Synced folders
+Copy the vagrant.yml file from `Defaults/` to `Configuration/`. Setup a shared directory to hold your TYPO3 sources and sites in the `Configuration/vagrant.yml` file:
+
+```yaml
+synced_folders:
+  - name: Development
+    src: ~/Projects/TYPO3/Review
+    target: /var/www
+```
+
+Make sure the `src` directory exists on your host machine!
+
+If you use shared folders, the contents of the shared `src` folder will replace the the content of the `target` folder on the Vagrant box. You will need to take care of setting up the MySQL databases inside of the Vagrant box. Or you can send me a pull request with some fancy lightweight provisioning code ;-).
+
+If you don't do this, you may want to add your public ssh key to the authorized_keys file of the vagrant user. Read the section SSH Access below.
+
 
 ## Multiple PHP versions
 
