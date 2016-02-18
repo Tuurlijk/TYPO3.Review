@@ -140,6 +140,12 @@ The patch is then applied to review.local.typo3.org.
 ![](Images/review.png)
 Now you can view the „old“ version without the patch at [dev-master.local.typo3.org](http://dev-master.local.typo3.org) and the „new“ version with the patch at [review.local.typo3.org](http://review.local.typo3.org). It is easy to switch between the two browser tabs (or windows) to see what has been changed with the patch.
 
+## Profiling
+
+XHProf is a Hierarchical Profiler for PHP. Facebook developed it for in-house use and made it open-source in 2009. It is a powerful tool if you need to know exactly what your PHP code is doing. When you prefix any TYPO3 site name with 'xhprof'; `[http://xhprof.7.6.local.typo3.org/](http://xhprof.7.6.local.typo3.org/)` (and set the magic cookie _profile — use the [XHProf Helper extension for Chrome](https://chrome.google.com/webstore/detail/xhprof-helper/adnlhmmjijeflmbmlpmhilkicpnodphi)), profiles will be created.
+
+You can view the profiles on the XHGui site http://xhprof.local.typo3.org/. Here you can see beautiful internals of your code doing it’s weird dance. Now it’s time to zoom in on some of the bottlenecks and start fixing the code.
+
 ## MailCatcher
 
 [MailCatcher](http://mailcatcher.me/) runs a super simple SMTP server which catches any message sent to it to display in a web interface. This makes it easy to test forms without actually sending mail to the 'real' mail address. Set your favourite app to deliver to smtp://127.0.0.1:1025 instead of your default SMTP server, then check out [http://local.typo3.org:1080](http://local.typo3.org:1080) to see the mail that arrived so far.
