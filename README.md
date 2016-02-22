@@ -78,7 +78,7 @@ If you set up a box without a file share, you will want to access the box using 
 Now you will be able to get into the box as user vagrant without supplying a password.
 
 ## Synced folders
-Copy the vagrant.yml file from `Defaults/` to `Configuration/`. Setup a shared directory to hold your TYPO3 sources and sites in the `Configuration/vagrant.yml` file:
+Edit the vagrant.yml file in `Configuration/`. Setup a shared directory to hold your TYPO3 sources and sites in the `Configuration/vagrant.yml` file:
 
 ```yaml
 synced_folders:
