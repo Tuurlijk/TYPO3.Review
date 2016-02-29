@@ -35,7 +35,7 @@ The flexible configuration allows you to create any combination of TYPO3 source 
 ## Requirements
 
 * [Virtualbox](https://www.virtualbox.org/) - Version 5.x - or another virtualization product - Free!
-* [Vagrant](http://www.vagrantup.com/) - Version 1.7.* is needed - Free!
+* [Vagrant](http://www.vagrantup.com/) - Version 1.7.* or higher is needed - Free!
 
 ## Installation
 
