@@ -85,10 +85,10 @@ echo "http://dev-master.local.typo3.org/typo3/"
 echo "http://review.local.typo3.org/typo3/"
 echo " "
 echo "MailCatcher"
-echo "http://local.typo3.org:1080/"
+echo "http://mail.local.typo3.org/"
 echo " "
-echo "ElasticSearch"
-echo "http://local.typo3.org:9200/"
+echo "Shell"
+echo "http://shell.local.typo3.org/"
 echo " "
 echo "XHProf GUI"
 echo "http://xhprof.local.typo3.org/"
@@ -159,8 +159,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			config.vm.synced_folder folder['src'], folder['target'],
 				id: folder['name'],
 				:nfs => true,
-				:mount_options => ['vers=3,udp,noacl,nocto,nosuid,nodev,nolock,noatime,nodiratime'],
-				:linux__nfs_options => ['no_root_squash']
+				:mount_options => ['vers=3,udp,noacl,nocto,nosuid,nodev,nolock,noatime,nodiratime,rw'],
+				:linux__nfs_options => ['no_root_squash,rw,no_subtree_check']
 		else
 			config.vm.synced_folder folder['src'], folder['target']
 		end
