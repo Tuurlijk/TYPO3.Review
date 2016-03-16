@@ -38,8 +38,8 @@ When the machine has booted, you can visit [http://local.typo3.org](http://local
 
 * [6.2.local.typo3.org/typo3/](http://6.2.local.typo3.org/typo3/)
 * [7.6.local.typo3.org/typo3/](http://7.6.local.typo3.org/typo3/)
-* [review.local.typo3.org/typo3/](http://review.local.typo3.org/typo3/)
 * [dev-master.local.typo3.org/typo3/](http://dev-master.local.typo3.org/typo3/)
+* [review.local.typo3.org/typo3/](http://review.local.typo3.org/typo3/)
 * [1.2.local.neos.io/neos/](http://1.2.local.neos.io/neos/)
 * [2.0.local.neos.io/neos/](http://2.0.local.neos.io/neos/)
 * [dev-master.local.neos.io/typo3/](http://dev-master.local.neos.io/typo3/)
@@ -55,6 +55,8 @@ The amount of CPUs available on the host machine will also be available on the g
 The CNAME *.local.typo3.org resolves to the IP 192.168.144.120. This means you will have magic auto-resolving hostnames. So if you change the IP, you will need to take care of your hostname resolving yourself, either by hardcoding all the hostnames you wish to use or by some other means.
 
 ## SSH Access
+
+You can find a terminal op: [http://shell.local.typo3.org](http://shell.local.typo3.org)
 
 If you set up a box without a file share, you will want to access the box using ssh. To add your public ssh key to the authorized_keys file of the vagrant user, you can execute the following command:
 
@@ -89,17 +91,21 @@ TYPO3 Review is based on TYPO3 Homestead which comes with the following stack:
 * TYPO3 CMS
 * NEOS CMS
 * composer
+* elasticsearch
 * hhvm
-* multiple PHP versions
+* multiple PHP versions [Current versions](https://github.com/Tuurlijk/TYPO3.Packer/blob/master/ansible/configuration/Development/php.yml#L56)
 * mailcatcher
 * mariadb
 * memcached
-* nginx
+* nginx + http2
 * nodejs
 * php-apcu
 * php-fpm
 * postfix nullmailer (outgoing only)
+* rabbitMQ
+* redis
 * self signed ssl certificates
+* shellinabox [http://shell.local.typo3.org](http://shell.local.typo3.org)
 * xdebug
 * xhprof / blackfire
 * zsh
@@ -172,7 +178,7 @@ This box needs internet connectivity to resolve the local.neos.io domain name to
 * 192.168.144.120 1.2.local.neos.io
 * 192.168.144.120 2.0.local.neos.io
 * 192.168.144.120 dev-master.local.neos.io
-* 192.168.144.120 6.2..local.typo3.org
+* 192.168.144.120 6.2.local.typo3.org
 * 192.168.144.120 7.6.local.typo3.org
 * 192.168.144.120 dev-master.local.typo3.org
 * 192.168.144.120 review.local.typo3.org
