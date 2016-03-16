@@ -21,12 +21,19 @@ Effortlessly test one site against multiple PHP versions and hhvm.
 
 Installation is pretty straight forward. You're just a few steps away from 'great success'.
 
-Clone TYPO3.Review, cd into the new directory and start the machine:
-```bash
-git clone https://github.com/Tuurlijk/TYPO3.Review.git
-cd TYPO3.Review
-vagrant up
-```
+**without git**
+* Download the latest [TYPO3.Review zip file](https://github.com/Tuurlijk/TYPO3.Review/archive/master.zip)
+* Extract the zip file
+* Open a command shell
+* Go into the new directory
+* Run `vagrant up`
+
+**with git**
+* Open a command shell
+* Clone the repository: `git clone https://github.com/Tuurlijk/TYPO3.Review.git`
+* Go into the new directory: `cd TYPO3.Review`
+* Start the machine: `vagrant up`
+
 When the machine has booted, you can visit [http://local.typo3.org](http://local.typo3.org) and also any of the pre-configured sites or any site you configured. The default sites are:
 
 * [6.2.local.typo3.org/typo3/](http://6.2.local.typo3.org/typo3/)
