@@ -99,7 +99,7 @@ SCRIPT
 VAGRANTFILE_API_VERSION = 2
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-	config.vm.box = 'Michiel/Review'
+	config.vm.box = 'Michiel/Development'
 	config.vm.boot_timeout = BOOT_TIMEOUT
 # If you have no Internet access (can not resolve *.local.typo3.org), you can use host aliases:
 # 	config.hostsupdater.aliases = [
@@ -140,7 +140,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 	# Vmware Fusion
 	config.vm.provider :vmware_fusion do |v, override|
-		override.vm.box = "Michiel/Review"
+		override.vm.box = "Michiel/Development"
 		v.vmx["memsize"] = MEMORY.to_i
 		v.vmx["numvcpus"] = CORES.to_i
 	end

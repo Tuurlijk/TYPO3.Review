@@ -2,41 +2,15 @@
 
 __The box currently has PHP 7.0.3 as base PHP version.__ 
 
-__To reduce the box size, the TYPO3 sources are now 'shallow' clones. You will find only a single branch and a history of the last 100 commits. You can fetch the full history by doing a `git fetch --unshallow`.__
+__To reduce the box size, all git sources are now 'shallow' clones. You will find only a single branch and a history of the last 100 commits. You can fetch the full history by doing a `git fetch --unshallow`.__
   
-__Also, the introduction package and realurl version required by the introduction package do not play nice with PHP 7.0 yet. So you will need to install the Introduction package by hand. While you are at it, please submit pull requests containing fixes to the respective authors.__ 
-
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=Tuurlijk&url=https://github.com/Tuurlijk/TYPO3.Review&title=TYPO3.Review&language=Ansible&tags=github&category=software)
 
 TYPO3 Review is your one-stop [TYPO3](http://typo3.org)  review environment. Just run `vagrant up` and a full Linux Ubuntu distribution will be downloaded with all the packages and configuration needed to review patches right away.
 
-This environment is intended as as a local environment. Security-wise it is in no way fit for production.
+This environment is intended as as a local environment. Security-wise it is in NO WAY fit for production.
 
 Effortlessly test one site against multiple PHP versions and hhvm.
-
-## Features
-
-TYPO3 Review is based on TYPO3 Homestead which comes with the following stack:
-
-* TYPO3 CMS
-* NEOS CMS
-* composer
-* hhvm
-* multiple PHP versions
-* mailcatcher
-* mariadb
-* memcached
-* nginx
-* nodejs
-* php-apcu
-* php-fpm
-* postfix nullmailer (outgoing only)
-* self signed ssl certificates
-* xdebug
-* xhprof / blackfire
-* zsh
-
-The flexible configuration allows you to create any combination of TYPO3 source and PHP backend with or without SSL.
 
 ## Requirements
 
@@ -100,6 +74,30 @@ If you use shared folders, the contents of the shared `src` folder will replace 
 Make sure the vagrant box can make a nfs connection to the host. Check your firewall settings if the host cannot connect to the shared folder. Enable access to nfsd and rpc.*.
 
 If you don't do this, you may want to add your public ssh key to the authorized_keys file of the vagrant user. Read the section SSH Access below.
+
+## Features
+
+TYPO3 Review is based on TYPO3 Homestead which comes with the following stack:
+
+* TYPO3 CMS
+* NEOS CMS
+* composer
+* hhvm
+* multiple PHP versions
+* mailcatcher
+* mariadb
+* memcached
+* nginx
+* nodejs
+* php-apcu
+* php-fpm
+* postfix nullmailer (outgoing only)
+* self signed ssl certificates
+* xdebug
+* xhprof / blackfire
+* zsh
+
+The flexible configuration allows you to create any combination of TYPO3 source and PHP backend with or without SSL.
 
 ## Multiple PHP versions
 
